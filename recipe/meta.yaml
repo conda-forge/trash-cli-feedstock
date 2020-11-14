@@ -10,31 +10,35 @@ source:
 
 build:
   number: 0
-  skip: true  # [win]
-  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python
+    - python >=3
     - pip
   run:
-    - python
+    - python >=3
+    - psutil
 
 test:
   imports:
     - trashcli
   commands:
+    - pip check
     - trash -h
     - trash-put -h
     - trash-list -h
     - trash-restore -h
     - trash-empty -h
     - trash-rm -h
+  requires:
+    - pip
 
 about:
   home: https://github.com/andreafrancia/trash-cli
-  license: GPL-2.0
-  license_file: {{ RECIPE_DIR }}/COPYING
+  license: GPL-2.0-or-later
+  license_file: COPYING
   summary: Command line interface to FreeDesktop.org Trash.
 
 extra:
