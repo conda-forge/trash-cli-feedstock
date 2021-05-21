@@ -1,4 +1,4 @@
-{% set version = "0.21.5.11" %}
+{% set version = "0.21.5.20" %}
 
 package:
   name: trash-cli
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/t/trash-cli/trash-cli-{{ version }}.tar.gz
-  sha256: 57d95aa1b719cae85d95d3761a7ca5a59efbeb7fe6a25d2723250e34fd302003
+  sha256: 733bd5babd14955c0596b0340faaf626be1efd5ffd693ad1b227749844f9b800
 
 build:
   number: 0
