@@ -1,4 +1,4 @@
-{% set version = "0.22.8.27" %}
+{% set version = "0.22.10.4.4" %}
 
 package:
   name: trash-cli
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/t/trash-cli/trash-cli-{{ version }}.tar.gz
-  sha256: b2799ed134c3fb2880fed12995ac9d9937466d86ff84936c16408f8d5778737b
+  sha256: 1aabbcfd973888728fff1c9250d7463b3be79a24d4194feebb63a32615162c50
 
 build:
   number: 0
@@ -15,11 +15,14 @@ build:
 
 requirements:
   host:
-    - python >=3
+    - python >=3.6
     - pip
   run:
-    - python >=3
+    - python >=3.6
     - psutil
+    - six
+    # optional fot autocomplete
+    - shtab
 
 test:
   imports:
