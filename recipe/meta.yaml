@@ -23,6 +23,7 @@ requirements:
     - six
     # optional fot autocomplete
     - shtab
+    - typing
 
 test:
   imports:
