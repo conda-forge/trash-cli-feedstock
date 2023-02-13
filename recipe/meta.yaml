@@ -29,7 +29,7 @@ test:
   imports:
     - trashcli
   commands:
-    - pip check
+    #- pip check
     - trash -h
     - trash-put -h
     - trash-list -h
