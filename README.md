@@ -1,11 +1,11 @@
-About trash-cli
-===============
+About trash-cli-feedstock
+=========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/trash-cli-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/andreafrancia/trash-cli
 
 Package license: GPL-2.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/trash-cli-feedstock/blob/main/LICENSE.txt)
 
 Summary: Command line interface to FreeDesktop.org Trash.
 
