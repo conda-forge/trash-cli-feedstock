@@ -5,21 +5,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/t/trash-cli/trash_cli-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/t/trash-cli/trash_cli-{{ version }}.tar.gz
   sha256: c721628e82c4be110b710d72b9d85c9595d8b524f4da241ad851a7479d0bdceb
 
 build:
-  number: 0
+  number: 1
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
+    - setuptools
     - pip
   run:
     - enum34
-    - python >=3.6
+    - python >={{ python_min }}
     - psutil
     - six
     # optional fot autocomplete
@@ -39,6 +40,7 @@ test:
     - trash-rm -h
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/andreafrancia/trash-cli
