@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: 0.26.9.29
+  version: "0.26.9.29"
 
 package:
   name: trash-cli
@@ -25,9 +25,8 @@ requirements:
     - python >=${{ python_min }}
     - psutil
     - six
-    - typing_extensions <4.14.0
-    - enum34
-    - typing
+    - shtab
+
 tests:
   - python:
       imports:
@@ -35,7 +34,7 @@ tests:
       pip_check: true
       python_version:
         - ${{ python_min }}.*
-        - '*'
+        - "*"
     script:
       - trash -h
       - trash-put -h
