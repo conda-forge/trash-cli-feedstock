@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "0.26.9.14"
+  version: 0.26.9.29
 
 package:
   name: trash-cli
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/t/trash-cli/trash_cli-${{ version }}.tar.gz
-  sha256: dfff726023223a864181e23ab5e349abb6a8e85d5341c0a4abb1c9340ad8764e
+  sha256: 2ca3300fd9f3b0334cb3f576a3ec95ced8593cc729df4332608d69a28eb50fb0
 
 build:
   number: 0
@@ -25,9 +25,9 @@ requirements:
     - python >=${{ python_min }}
     - psutil
     - six
-    # optional fot autocomplete
-    - shtab
-
+    - typing_extensions <4.14.0
+    - enum34
+    - typing
 tests:
   - python:
       imports:
@@ -35,7 +35,7 @@ tests:
       pip_check: true
       python_version:
         - ${{ python_min }}.*
-        - "*"
+        - '*'
     script:
       - trash -h
       - trash-put -h
